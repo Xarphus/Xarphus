@@ -179,8 +179,8 @@ class Download_Thread(QThread):
         self._run_semaphore = QSemaphore(1)
 
     def run(self):
-        print "log", self.location_file
-        print "url", self.url_download
+        print "location ", self.location_file
+        print "URL-Link", self.url_download
         try:
             getfile = requests.get(self.url_download, stream=True)
             status1 = getfile.status_code
@@ -193,7 +193,6 @@ class Download_Thread(QThread):
             print 'Could not download ', g
             self.error_http.emit()
         else:
-            print "Los"
             file_size = int(requests.head(self.url_download).headers.get('content-length', [0]))
             print "%s Byte" %file_size
             result = file_size / (1024*5)
@@ -204,9 +203,7 @@ class Download_Thread(QThread):
             with open(self.location_file, 'wb') as fd:
                 for chunk in getfile.iter_content(chunk_size):
                     fd.write(chunk)
-                            #downloaded_bytes += chunk_size # zu ungenau
-                    downloaded_bytes = fd.tell() # sehr genau und direkt
-                            #downloaded_bytes += len(chunk) # auch nicht schlecht
+                    downloaded_bytes = fd.tell() 
                     print (float(downloaded_bytes)/file_size*100)
                     self.notify_progress.emit(float(downloaded_bytes)/file_size*100)
 
