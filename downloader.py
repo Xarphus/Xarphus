@@ -93,9 +93,6 @@ class MyCustomDialog(QDialog):
         self.progressBar.setValue(i)
 
     def set_progressbar(self):
-        color = "#0080FF"
-        template_css = """QProgressBar { background: %s; }"""
-        css = template_css % color
         self.progressBar.setStyleSheet(DEFAULT_STYLE)
  
     def check_folder_exists(self):
