@@ -160,9 +160,7 @@ class Download_Thread(QThread):
             with open(self.location, 'wb') as fd:
                 for chunk in file.iter_content(chunk_size):
                     fd.write(chunk)
-                            #downloaded_bytes += chunk_size # zu ungenau
                     downloaded_bytes = fd.tell() # sehr genau und direkt
-                            #downloaded_bytes += len(chunk) # auch nicht schlecht
                     print (float(downloaded_bytes)/file_size*100)
                     self.notify_progress.emit(float(downloaded_bytes)/file_size*100)
                         
@@ -179,7 +177,6 @@ class Download_Thread(QThread):
 
     def stop(self):
         print "stop"
-        #self.finished_thread.emit()
         self._run_semaphore.acquire(1)
  
 if __name__ == "__main__":
