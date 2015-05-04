@@ -164,10 +164,7 @@ class Download_Thread(QThread):
                     if self._run_semaphore.available() == 0:
                         self._run_semaphore.release(1)
                         break
-                    
-                    if not file.reason == "OK":
-                        break
-                    
+
                 print "Finish"
                 self.finished_download.emit()
                 self.finished_thread.emit()
