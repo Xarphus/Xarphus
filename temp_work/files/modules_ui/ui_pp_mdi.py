@@ -8,10 +8,6 @@ FILE_NAME = "ui_pp_mdi.py"
 # ---------
 import sys
 import os
-import webbrowser
-import time
-import configparser
-
 
 try:
     from PyQt4.QtCore import QSize, Qt, SIGNAL
