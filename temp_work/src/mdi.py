@@ -24,7 +24,7 @@ except ImportError:
 
 # import own modules
 try:
-    from src.example import MyCustomDialog
+    from src.downloader import MyCustomDialog
     from src.ui_pp_update import Update_Window
 except:
     print "Error"
@@ -64,7 +64,7 @@ class MDI_Window(QMainWindow):
 
     def create_update_form(self):
         # open example from here
-        from src.example import MyCustomDialog
+        from src.downloader import MyCustomDialog
         self.example_dialog = MyCustomDialog()
         self.example_dialog.show()
 
