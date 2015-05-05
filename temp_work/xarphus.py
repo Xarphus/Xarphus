@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
-FILE_NAME = "xarphus.py"
 try:
     import sys
     import os
