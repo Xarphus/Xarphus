@@ -11,8 +11,13 @@ except:
     print FILE_NAME + ": Unexpected error:", sys.exc_info()[0]
     raise
 
+#!/usr/bin/env python
+#-*- coding:utf-8 -*-
+
 def main():
-    start_mdi()
+        from files.modules_ui.ui_pp_mdi import Mdi_Main
+        window = Mdi_Main()
+        window.show_and_raise()
 
 if __name__ == "__main__":
     main()
