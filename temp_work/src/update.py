@@ -17,33 +17,6 @@ except ImportError:
     print "STATUS [OK]  ", FILE_NAME, ": All modules are imported from PySide"
 
 
-MESSAGEBOX = """
-QMessageBox {
-    background: #222;
-}
-QMessageBox * {
-    background: #222;
-    color: #cccdcc;
-}
-QMessageBox QPushButton {
-    width: 50px;
-    height: 20px;
-    background: #444;
-    color: #aaa;
-}
-"""
-DEFAULT_STYLE = """
-QProgressBar{
-    border: 1px solid grey;
-    background-color: #E6E6E6;
-    border-radius: 5px;
-    text-align: center
-}
-QProgressBar::chunk {
-    background-color: #498EEE;
-    width: 10px;
-    margin: 0px;
-}"""
 
 class Update_Window(QDialog):
 
@@ -52,7 +25,7 @@ class Update_Window(QDialog):
     def __init__(self, parent=None):
         super(Update_Window, self).__init__(parent)
 
-        self.getPath_update = os.path.abspath(os.path.join('files', "qt_ui", 'pp_update.ui'))
+        self.getPath_update = os.path.abspath(os.path.join('gui', 'pp_update.ui'))
 
         try:
             self.ui_pp_update = QUiLoader()
@@ -70,7 +43,6 @@ class Update_Window(QDialog):
 
         # Set data for download and saving in path
         self.location = os.path.abspath(os.path.join('temp', 'example-app-0.3.win32.zip'))
-        print "LOC ", self.location
         self.url = 'http://sophus.bplaced.net/download/example-app-0.3.win32.zip'
 
         self.download_task = Download_Thread(self.location, self.url)
@@ -81,7 +53,6 @@ class Update_Window(QDialog):
 
         self.ui_pp_update.pushButtonUpdate.setEnabled(True)
         self.create_actions_buttons()
-        self.set_progressbar()
 
     def on_start(self):
         self.ui_pp_update.progressBarUpdate.setRange(0, 0)
@@ -89,8 +60,6 @@ class Update_Window(QDialog):
 
     def on_finish_download(self):
         msg_box = QMessageBox()
-
-        msg_box.setStyleSheet(MESSAGEBOX)
         QMessageBox.question(msg_box, ' Message ',
                                            "The file has been fully downloaded.", msg_box.Ok)
 
@@ -112,9 +81,6 @@ class Update_Window(QDialog):
         self.download_task.stop()
         self.ui_pp_update.progressBarUpdate.setValue(0)
 
-    def set_progressbar(self):
-        self.ui_pp_update.progressBarUpdate.setStyleSheet(DEFAULT_STYLE)
-
     def check_folder_exists(self):
         location = os.path.abspath(os.path.join('temp'))
         if not os.path.exists(location):
@@ -126,9 +92,9 @@ class Update_Window(QDialog):
             self.on_start()
 
     def on_finished(self):
-        print "Close"
         self.download_task.stop()
         self.ui_pp_update.progressBarUpdate.setValue(0)
+        self.close()
 
     def set_ui_pp_update(self):
         self.ui_pp_update.progressBarUpdate.setAlignment(Qt.AlignCenter)
@@ -140,7 +106,6 @@ class Update_Window(QDialog):
         self.ui_pp_update.pushButtonClose.clicked.connect(self.on_finished)
 
     def closeEvent(self, event):
-        print "Scheiss runterfahren"
         self.download_task.stop()
 
     def show_and_raise(self):
@@ -162,15 +127,11 @@ class Download_Thread(QThread):
         self._run_semaphore = QSemaphore(1)
 
     def run(self):
-        print "LOCATION ", self.location
-        print "IRL ", self.url
         try:
-            print "Connect to the web server"
             file = requests.get(self.url, stream=True)
             status = file.status_code
             re = file.reason
-            print "Reason ui_pp_update ", re
-            print "Von ui_pp_update ",status
+
             if not status == 200:
                 self.error_http.emit()
 
@@ -193,7 +154,7 @@ class Download_Thread(QThread):
             with open(self.location, 'wb') as fd:
                 for chunk in file.iter_content(chunk_size):
                     fd.write(chunk)
-                    downloaded_bytes = fd.tell() # sehr genau und direkt
+                    downloaded_bytes = fd.tell() 
                     print (float(downloaded_bytes)/file_size*100)
                     self.notify_progress.emit(float(downloaded_bytes)/file_size*100)
 
