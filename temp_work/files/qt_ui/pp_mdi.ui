@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>737</width>
+    <height>642</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/img_128x128/img_128x128/Logo.png</normalon>
+   </iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextUnderIcon</enum>
+  </property>
+  <property name="animated">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Triangular</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QMdiArea" name="mdiArea">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>480</width>
+      <height>300</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>737</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuManagement">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionOnUpdate"/>
+   </widget>
+   <addaction name="menuManagement"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBarMDI">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="actionAddContact">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/Contact.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddContact</string>
+   </property>
+  </action>
+  <action name="actionAddMovie">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/addMovie.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddMovie</string>
+   </property>
+  </action>
+  <action name="actionAddSerie">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/addSerie.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddSerie</string>
+   </property>
+  </action>
+  <action name="actionAddAlbum">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/Music_CD.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddAlbum</string>
+   </property>
+  </action>
+  <action name="actionAddSingle">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/Music_CD.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddSingle</string>
+   </property>
+  </action>
+  <action name="actionAddRecord">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/Record.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddRecord</string>
+   </property>
+  </action>
+  <action name="actionSysTray">
+   <property name="text">
+    <string>SysTray</string>
+   </property>
+  </action>
+  <action name="actionOnUpdate">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/Exit.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Update Window</string>
+   </property>
+  </action>
+  <action name="actionAddComic">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/addComic.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddComic</string>
+   </property>
+  </action>
+  <action name="actionAddBook">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/addBook.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddBook</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/About.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAbout</string>
+   </property>
+  </action>
+  <action name="actionUpdate">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/Update.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionUpdate</string>
+   </property>
+  </action>
+  <action name="actionSupport">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/Support.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionSupport</string>
+   </property>
+  </action>
+  <action name="actionFeedback">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/Feedback.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionFeedback</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/Help.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionHelp</string>
+   </property>
+  </action>
+  <action name="actionSearch">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/Search.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionSearch</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/Settings.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionSettings</string>
+   </property>
+  </action>
+  <action name="actionFilter">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/Filter.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionFilter</string>
+   </property>
+  </action>
+  <action name="actionAddSingleAudio">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/Audio_File.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddSingleAudio</string>
+   </property>
+  </action>
+  <action name="actionAddMagazin">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/addMagazin.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddMagazin</string>
+   </property>
+  </action>
+  <action name="actionAddNews">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/addNews.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddNews</string>
+   </property>
+  </action>
+  <action name="actionM">
+   <property name="text">
+    <string>M</string>
+   </property>
+  </action>
+  <action name="actionAddCoin">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/Coin.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddCoin</string>
+   </property>
+  </action>
+  <action name="actionAddNote">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/addNote.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddNote</string>
+   </property>
+  </action>
+  <action name="actionAddGame">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/Games.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddGame</string>
+   </property>
+  </action>
+  <action name="actionRestart">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/Restart.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionRestart</string>
+   </property>
+  </action>
+  <action name="actionRegister">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/Register.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionRegister</string>
+   </property>
+  </action>
+  <action name="actionLogIn">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/password.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionLogIn</string>
+   </property>
+  </action>
+  <action name="actionFAQ">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/FAQ.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionFAQ</string>
+   </property>
+  </action>
+  <action name="actionReleaseNote">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/ReleaseNote.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionReleaseNote</string>
+   </property>
+  </action>
+  <action name="actionAddQuotation">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_24x24/img_24x24/Quotation.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddQuotation</string>
+   </property>
+  </action>
+  <action name="actionClose_All_SubWindows">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_16x16/img_16x16/Close_All_Windows.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionClose_All_SubWindows</string>
+   </property>
+  </action>
+  <action name="actionAddStamp">
+   <property name="icon">
+    <iconset>
+     <normalon>:/img_32x32/img_32x32/Stamp.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>actionAddStamp</string>
+   </property>
+  </action>
+  <action name="actionMovie">
+   <property name="text">
+    <string>Movie</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
